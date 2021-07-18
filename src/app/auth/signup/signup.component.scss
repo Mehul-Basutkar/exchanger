@@ -1,0 +1,32 @@
+.card{
+      margin-top: 50px;
+      margin-left: 450px;
+      box-shadow: 10px 15px 27px  rgba(241, 48, 80, 0.75);
+  }
+  label{
+      margin-top: 1rem;
+  }
+  
+  a{
+      margin-top: 10px;
+  }
+  
+  small{
+      color: red;
+  }
+  
+  input{
+      box-shadow: 0px 4px 4px -5px rgb(187, 43, 43);
+  }
+  
+  btn{
+      height: 2px;
+  }
+  
+  .ng-invalid:not(form).ng-touched{
+      border: 0.9px solid rgb(240, 24, 24);
+  }
+  
+  .ng-valid:not(form).ng-touched{
+      border: 0.9px solid rgb(37, 231, 37);
+  }

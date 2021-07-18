@@ -1,0 +1,29 @@
+<div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">forgot password</h5>
+        <form [formGroup]="fp" (ngSubmit)="submit()">
+          <label for="email" class="mt-3">Email </label>
+          <input 
+            type="text" 
+            class="form-control" 
+            placeholder="enter your email"
+            aria-describedby="basic-addon2"
+            formControlName="email"
+          >
+          <div *ngFor="let e of errMsg.email">
+            <ng-container *ngIf="fp.get('email')?.touched && !fp.get('email')?.valid">
+              <small>{{ e.message }}</small>
+            </ng-container>
+          </div>
+          <button 
+            class="btn btn-primary mt-3 container"
+            type="submit"
+          >Reset password</button>
+          <button 
+            class="btn btn-primary mt-3" 
+            routerLink="../"
+          >back to login</button>
+        </form>
+  
+      </div>
+  </div>

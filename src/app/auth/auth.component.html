@@ -1,0 +1,43 @@
+<div class="card" style="width: 23rem;">
+      <div class="card-body">
+        <h5 class="card-title">Login</h5>
+        <form [formGroup]="loginForm" (ngSubmit)="submit()">
+          <label for="email" class="mt-3">Email </label>
+          <input 
+            type="text" 
+            class="form-control" 
+            placeholder="enter your email"
+            aria-describedby="basic-addon2"
+            formControlName="email"
+          >
+          <div *ngFor="let e of errMsg.email">
+            <ng-container 
+              *ngIf="loginForm.get('email')?.touched && !loginForm.get('email')?.valid"
+            ><p style="color: red;" class="error-message">{{e.message}} </p>
+            </ng-container>
+          </div>
+      
+          <label for="password" class="mt-3">Password</label>
+          <input 
+            type="password"
+            class="form-control" 
+            placeholder="enter your password"
+            aria-describedby="passwordHelpBlock"
+            formControlName="password"
+          >
+          <div *ngFor="let e of errMsg.password">
+            <ng-container 
+              *ngIf="loginForm.get('password')?.touched && !loginForm.get('password')?.valid"
+            ><p style="color: red;" class="error-message">{{e.message}} </p>
+            </ng-container>
+          </div>
+          <button 
+            class="btn btn-primary mt-3 container"
+            [disabled]="!loginForm.valid"
+          >Login</button>
+          <a routerLink="forgot">Forgot password?</a>
+          <p class="mt-3">Dont have account yet. <span><a routerLink="signup">Sign up</a></span></p>
+        </form>
+  
+      </div>
+  </div>
